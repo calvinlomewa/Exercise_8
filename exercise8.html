@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Name of Document</title>
+</head>
+<body>
+    <canvas id="roadSign" width="700" height="400"></canvas>
+    
+    <script>
+        var canvas = document.getElementById("roadSign");
+        var context = canvas.getContext("2d");
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var radius = 100;
+        
+        context.save;
+        //Outer Cirlce
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = "red";
+        context.fill();
+        
+        // Inside Upper Text
+        context.fillStyle = "white";
+        context.font = "bold 35px Arial";
+        context.fillText("DO NOT", 280, 180);
+    
+        //Inside Rectangle
+        context.strokeStyle = "white";
+        context.lineWidth = 30;
+        context.beginPath();
+        context.moveTo(260, 205);
+        context.lineTo(440, 205);
+        context.stroke();
+        
+        //Inside Lower Text
+        context.fillStyle = "white";
+        context.font = "bold 35px Arial";
+        context.fillText("ENTER", 288, 255);
+        
+        context.restore;
+    </script>
+</body>
+</html>
